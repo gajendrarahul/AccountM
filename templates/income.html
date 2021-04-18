@@ -1,0 +1,42 @@
+{% extends 'base/master.html' %}
+{% load static %}
+{% block 'title' %} Home {% endblock %}
+ {% block 'sidebar' %}
+  {% include 'base/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'navbar' %}
+  {% include 'base/nav.html' %}
+ {% endblock %}
+
+ {% block 'footer' %}
+{% include 'base/footer.html' %}
+ {% endblock %}
+
+{% block 'body' %}
+
+{% include 'base/messages.html' %}
+
+<h3>All Income</h3>
+  <table class="table">
+   <thead>
+     <th>Title</th>
+     <th>Amount</th>
+     <th>date</th>
+   <th>Action</th>
+   </thead>
+   {% for a in all %}
+    <tr>
+        <td>{{a.title}}</td>
+        <td>{{a.amount}}</td>
+        <td>{{a.date}}</td>
+        <td><a href="{% url 'removeincome' a.slug%}"> <i class="fa fa-trash"></i></a> |  <a href="{% url 'editIncome' a.slug %}"> <i class="fa fa-edit"></i></a> </td>
+
+    </tr>
+   {% endfor %}
+  </table>
+
+
+{% endblock %}
+
+

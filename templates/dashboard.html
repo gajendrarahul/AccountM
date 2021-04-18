@@ -1,0 +1,20 @@
+{% extends 'base/master.html' %}
+{% load static %}
+{% block 'title' %} Home {% endblock %}
+
+ {% block 'sidebar' %}
+  {% include 'base/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'navbar' %}
+  {% include 'base/nav.html' %}
+ {% endblock %}
+
+ {% block 'footer' %}
+{% include 'base/footer.html' %}
+ {% endblock %}
+
+{% block 'body' %}
+ {% include 'base/messages.html' %}
+{% endblock %}
+
